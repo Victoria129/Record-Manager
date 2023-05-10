@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Class to handle all creations
 class Creations
   def add_a_book

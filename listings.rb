@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Class to handle all user listings
 class Listings
   def list_all_books
