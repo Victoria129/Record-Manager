@@ -1,3 +1,6 @@
+require './listings'
+require './creations'
+
 class App
     def initialize
         @listings = Listings.new
@@ -31,5 +34,22 @@ class App
             puts #blank
         end
 
+    end
+
+    def enter_menu
+        case @menu_choice
+        when '1' then puts @listings.list_all_books
+        when '2' then puts @listings.list_all_albums
+        when '3' then puts @listings.list_all_movies
+        when '4' then puts @listings.list_all_games
+        when '5' then puts @listings.list_all_genres
+        when '6' then puts @listings.list_all_labels
+        when '7' then puts @listings.list_all_authors
+        when '8' then puts @listings.list_all_sources
+        when '9' then puts @creations.add_a_book
+        when '10' then puts @creations.add_an_album
+        when '11' then puts @creations.add_a_movie
+        when '12' then puts @creations.add_a_game
+        end
     end
 end
