@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'date'
 
 # Represents an item in a collection.
@@ -21,6 +19,6 @@ class Item
   end
 
   def move_to_archive
-    @archived = can_be_archived? ? true : false
+    @archived = can_be_archived?
   end
 end
