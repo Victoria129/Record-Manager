@@ -1,22 +1,26 @@
+# frozen_string_literal: true
+
 require 'date'
 
+# Represents an item in a collection.
 class Item
-    attr_accessor :genre, :author, :source, :label, :publish_date 
-  def initialize(genre, author, source, label, publish_date, archived: false)
+  attr_accessor :genre, :author, :source, :label, :publish_date
+
+  def initialize(attributes)
     @id = Random.rand(1...1000)
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
-    @publish_date = Date.parse(publish_date)
-    @archived = archived
+    @genre = attributes[:genre]
+    @author = attributes[:author]
+    @source = attributes[:source]
+    @label = attributes[:label]
+    @publish_date = attributes[:publish_date]
+    @archived = attributes[:archived] || false
   end
 
   def can_be_archived?
-    Date.today.year - @publish_date.year > 10 ? true : false
+    Date.today.year - @publish_date.year > 10
   end
 
   def move_to_archive
-    can_be_archived? ? @archived = true : @archived = false
+    @archived = can_be_archived? ? true : false
   end
 end
