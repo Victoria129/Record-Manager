@@ -21,10 +21,3 @@ class Book < Item
     @books
   end
 end
-
-# tests
-
-book = Book.new(publisher: "Amazon", cover_state: "Good", genre: "Vintage", author: "Agatha Christie", source: "Bookstore", label: "Classic", publish_date: "1982-03-11")
-p book
-puts book.label
-puts book.publish_date
