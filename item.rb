@@ -2,7 +2,8 @@ require 'date'
 
 # Represents an item in a collection.
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date, :archived 
+  attr_accessor :genre, :author, :source, :label, :publish_date
+  attr_reader :archived
 
   def initialize(attributes)
     @id = Random.rand(1...1000)

@@ -1,12 +1,11 @@
-# frozen_string_literal: true
-
 require './item'
 
+# Book class for book object creation
 class Book < Item
   attr_accessor :publisher, :cover_state
 
   @books = []
-  def initialize(publisher: , cover_state: , **attributes)
+  def initialize(publisher:, cover_state:, **attributes)
     super(attributes)
     @publisher = publisher
     @cover_state = cover_state
