@@ -11,7 +11,7 @@ class Item
     @author = attributes[:author]
     @source = attributes[:source]
     @label = attributes[:label]
-    @publish_date = attributes[:publish_date]
+    @publish_date = Date.parse(attributes[:publish_date])
     @archived = attributes[:archived] || false
   end
 
