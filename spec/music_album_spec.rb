@@ -4,12 +4,12 @@ require './genre'
 RSpec.describe MusicAlbum do
   before(:each) do
     @album1 = MusicAlbum.new(on_spotify: true, genre: 'Vintage', author: 'Agatha Christie',
-                      source: 'albumstore', label: 'Classic', publish_date: '1982-03-11')
+                             source: 'albumstore', label: 'Classic', publish_date: '1982-03-11')
     @album2 = MusicAlbum.new(on_spotify: true, genre: 'Country', author: 'Jane Austen',
-                      source: 'Library', label: 'My country', publish_date: '2000-01-28')
+                             source: 'Library', label: 'My country', publish_date: '2000-01-28')
   end
 
-  it "should create an instance of the MusicAlbum class" do
+  it 'should create an instance of the MusicAlbum class' do
     expect(MusicAlbum.all.empty?).to eq(false)
     expect(@album1.on_spotify).to eq(true)
   end
