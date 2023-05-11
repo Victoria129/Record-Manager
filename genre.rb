@@ -2,14 +2,13 @@ require './item'
 
 # Genre class to define Item genre objects
 class Genre
-  attr_accessor :title, :colour
+  attr_accessor :name
 
   @genres = []
 
-  def initialize(title, colour)
+  def initialize(name)
     @id = Random.rand(1...1000)
-    @title = title
-    @colour = colour
+    @name = name
     @items = []
     self.class.all << self
   end
