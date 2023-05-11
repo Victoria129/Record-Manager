@@ -1,6 +1,6 @@
 require './item'
 
-# Book class for book object creation
+# Book class for book object creation.
 class Book < Item
   attr_accessor :publisher, :cover_state
 
