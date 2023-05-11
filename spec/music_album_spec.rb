@@ -10,8 +10,8 @@ RSpec.describe MusicAlbum do
   end
 
   it 'lists all genres' do
-    Genre.new('name')
-    Genre.new('name')
+    Genre.new('Country')
+    Genre.new('Jazz')
 
     expect(MusicAlbum.all.length).to eq(2)
     expect(Genre.all.length).not_to eq(0)
