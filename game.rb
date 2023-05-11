@@ -11,4 +11,12 @@ class Game < Item
     @last_played = Date.parse(last_played)
     self.class.all << self
   end
+
+  def can_be_archived?
+    Date.today.year - @publish_date.year > 10 && Date.today.year - @last_played.year > 2 ? true : false
+  end
+
+  def self.all
+    @games
+  end
 end
