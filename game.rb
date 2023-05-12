@@ -1,5 +1,6 @@
 require './item'
 
+# class for creating game object for items collection
 class Game < Item
   attr_accessor :publisher, :cover_state
   attr_reader :last_played, :multiplayer
