@@ -2,7 +2,8 @@ require './item'
 
 # Label class to define Item label objects
 class Label
-  attr_accessor :title, :colour
+  attr_accessor :title, :colour, :items
+  attr_reader :id
 
   @labels = []
 
