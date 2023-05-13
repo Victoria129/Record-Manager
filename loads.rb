@@ -1,7 +1,6 @@
 require 'json'
 require './converter'
 
-# rubocop:disable Metrics/AbcSize
 def load_book
   return unless File.exist?('books.json') && !File.empty?('books.json')
 
@@ -66,4 +65,3 @@ def game_file_load
 
   Game.all = games
 end
-# rubocop:enable Metrics/AbcSize

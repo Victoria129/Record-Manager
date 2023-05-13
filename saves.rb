@@ -1,6 +1,5 @@
 require './book'
 
-# rubocop:disable Metrics/AbcSize
 def book_saves
   books = Book.all
   File.write('books.json', JSON.dump(books.map do |book|
@@ -36,4 +35,3 @@ def game_saves
                                          publish_date: game.publish_date.to_s }
                                      end))
 end
-# rubocop:enable Metrics/AbcSize

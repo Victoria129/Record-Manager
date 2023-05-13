@@ -5,7 +5,6 @@ class Item
   attr_accessor :genre, :author, :source, :label, :publish_date
   attr_reader :id, :archived
 
-  # rubocop:disable Metrics/AbcSize
   def initialize(attributes)
     @id = Random.rand(1...1000)
     @genre = attributes[:genre]
@@ -22,7 +21,6 @@ class Item
     @publish_date = Date.parse(attributes[:publish_date])
     @archived = attributes[:archived] || false
   end
-  # rubocop:enable Metrics/AbcSize
 
   def can_be_archived?
     Date.today.year - @publish_date.year > 10
