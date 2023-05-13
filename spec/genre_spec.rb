@@ -13,14 +13,13 @@ RSpec.describe Genre do
   end
 
   it 'should add item to the items array using add_items method' do
-    label1 = Label.new('Classic', 'grey') 
-    genre = Genre.new(name: 'Country') 
+    label1 = Label.new('Classic', 'grey')
+    genre = Genre.new(name: 'Country')
     genre2 = Genre.new(name: 'Vintage')
-    author = Author.new('Mike', 'Smith') 
-
+    author = Author.new('Mike', 'Smith')
 
     album1 = MusicAlbum.new(on_spotify: true, genre: genre, author: author, source: 'Bookstore',
-                      label: label1, publish_date: '1982-03-11')
+                            label: label1, publish_date: '1982-03-11')
 
     genre2.add_items(album1)
 

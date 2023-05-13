@@ -12,13 +12,13 @@ RSpec.describe Author do
   end
 
   it 'should add item using the add_item method' do
-    genre = Genre.new(name: 'Vintage') 
-    label = Label.new('Classic', 'Red') 
-    author = Author.new('Mike', 'Smith') 
+    genre = Genre.new(name: 'Vintage')
+    label = Label.new('Classic', 'Red')
+    author = Author.new('Mike', 'Smith')
     author2 = Author.new('John', 'Doe')
 
     book = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: genre, author: author,
-    source: 'Bookstore', label: label, publish_date: '1982-03-11')
+                    source: 'Bookstore', label: label, publish_date: '1982-03-11')
 
     author2.add_items(book)
 
