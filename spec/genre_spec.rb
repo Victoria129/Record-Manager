@@ -1,6 +1,8 @@
 require './genre'
 require './item'
 require './label'
+require './author'
+require './music_album'
 
 RSpec.describe Genre do
   it 'tests the Genre class instance' do
@@ -11,11 +13,13 @@ RSpec.describe Genre do
   end
 
   it 'should add item to the items array using add_items method' do
-    label1 = Label.new('Classic', 'grey') # Fix: Create an instance of Label
-    genre1 = Genre.new('Country')
-    genre2 = Genre.new('Gospel')
+    label1 = Label.new('Classic', 'grey') 
+    genre = Genre.new(name: 'Country') 
+    genre2 = Genre.new(name: 'Vintage')
+    author = Author.new('Mike', 'Smith') 
 
-    album1 = Item.new(on_spotify: true, genre: genre1, author: 'Agatha Christie', source: 'Bookstore',
+
+    album1 = MusicAlbum.new(on_spotify: true, genre: genre, author: author, source: 'Bookstore',
                       label: label1, publish_date: '1982-03-11')
 
     genre2.add_items(album1)

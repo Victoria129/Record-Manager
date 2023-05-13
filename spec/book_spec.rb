@@ -1,12 +1,26 @@
 require './book'
 require './label'
+require './genre'
+require './author'
 
 RSpec.describe Book do
   before(:each) do
-    @book1 = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: 'Vintage', author: 'Agatha Christie',
-                      source: 'Bookstore', label: 'Classic', publish_date: '1982-03-11')
-    @book2 = Book.new(publisher: 'Penguin', cover_state: 'Bad', genre: 'Fiction', author: 'Jane Austen',
-                      source: 'Library', label: 'Bestseller', publish_date: '2000-01-28')
+    genre = Genre.new(name: 'Vintage') 
+    author = Author.new('Mike', 'Smith') 
+    label = Label.new('Classic', 'Red') 
+    genre2 = Genre.new(name: 'Vintage')
+    author2 = Author.new('John', 'Doe')
+    label2 = Label.new('Bestseller', 'Yellow')
+                      
+    @book1 = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: genre, author: author,
+    source: 'Bookstore', label: label, publish_date: '1982-03-11')
+
+    @book2 = Book.new(
+  publisher: 'Amazon', cover_state: 'Good', genre: genre2, author: author2,
+  source: 'Bookstore', label: label2, publish_date: '1982-03-11'
+)
+
+                      
   end
 
   it 'lists all labels' do
