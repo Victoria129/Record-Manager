@@ -4,6 +4,8 @@ require './saves'
 require './loads'
 require 'json'
 
+# rubocop:disable Metrics/AbcSize
+# rubocop:disable Metrics/MethodLength
 # Class to handle UI and it's methods
 class App
   def loading
@@ -51,8 +53,6 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/AbcSize
-  # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/CyclomaticComplexity
   def enter_menu
     puts # blank
@@ -68,7 +68,7 @@ class App
     when '9' then puts add_a_game
     end
   end
-  # rubocop:enable Metrics/AbcSize
-  # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/CyclomaticComplexity
 end
+# rubocop:enable Metrics/AbcSize
+# rubocop:enable Metrics/MethodLength

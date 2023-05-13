@@ -3,7 +3,7 @@ require './converter'
 
 # rubocop:disable Metrics/AbcSize
 def load_book
-  return unless File.exist?('books.json') && !File.zero?('books.json')
+  return unless File.exist?('books.json') && !File.empty?('books.json')
 
   @book_data = JSON.parse(File.read('books.json'))
 
@@ -24,7 +24,7 @@ def book_file_load
 end
 
 def load_album
-  return unless File.exist?('albums.json') && !File.zero?('albums.json')
+  return unless File.exist?('albums.json') && !File.empty?('albums.json')
 
   @album_data = JSON.parse(File.read('albums.json'))
 
@@ -46,7 +46,7 @@ def album_file_load
 end
 
 def load_game
-  return unless File.exist?('games.json') && !File.zero?('games.json')
+  return unless File.exist?('games.json') && !File.empty?('games.json')
 
   @game_data = JSON.parse(File.read('games.json'))
 
