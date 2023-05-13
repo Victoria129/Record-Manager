@@ -12,7 +12,7 @@ class MusicAlbum < Item
   end
 
   def can_be_archived?
-    Date.today.year - @publish_date.year > 10 && @on_spotify == true
+    super && @on_spotify == true
   end
 
   def self.all
