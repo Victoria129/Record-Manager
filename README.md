@@ -24,8 +24,9 @@
 **Ruby Capstone** This app is designed with Ruby and allows a user to add books, music_albums, and movies.
 
 ## 🛠 Built With <a name="built-with"></a>
+### Tech Stack <a name="tech-stack"></a>
+- Ruby
 
-**Ruby**
 
 ### Video Presentation 
 Kindly take a look at our video presentation [here](https://youtu.be/eJKHfmB4RB8) 
@@ -40,22 +41,72 @@ Kindly take a look at our video presentation [here](https://youtu.be/eJKHfmB4RB8
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+## 💻 Getting Started <a name="getting-started"></a>
 
 ### Setup <a name="setup"></a>
 
-Clone this repository to your desired file location:
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+- In order to run this project you need:
+
+- [git](https://git-scm.com/downloads): A tool for managing source code
+- [Visual Studio Code](https://code.visualstudio.com/): A source code editor
+<!--
+Example command:
 
 ```sh
-  cd desired-file location
-  git clone https://github.com/Victoria129/ruby-capstone.git
-  cd ruby-capstone
+ gem install rails
 ```
+ -->
 
-### Usage <a name="usage"></a>
+### Setup
+
+- Clone this repository to your desired folder: https://github.com/Victoria129/ruby-capstone.git
+- Run bundle install to install the dependencies.
+
+### Install
+Install this project with:
+
+-  cd ruby-capstone
+-  ubuntu version 22 or higher
+
+### Usage
+To run the project, execute the following command:
+
+- ruby main.rb
+- rspec (for unit tests)
+
+### Run tests
+
+To run tests, run the following command:
+- Run robocop . 
+
+<!--
+Example command:
 
 ```sh
-  ruby main.rb
+  bin/rails test test/models/article_test.rb
 ```
+--->
+
+### Deployment
+
+You can deploy this project using:
+- Github pages
+
+Github pages
+
+<p>follow <a href="https://www.w3schools.com/git/git_remote_pages.asp?remote=github">these steps</a> for example</p>
+<!--
+Example:
+
+```sh
+
+```
+ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
