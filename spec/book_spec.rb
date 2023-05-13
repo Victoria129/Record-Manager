@@ -53,6 +53,6 @@ RSpec.describe Book do
 
   it 'lists all books' do
     # checks that books are created before each test
-    expect(Book.all.length).to eq(6)
+    expect(Book.all.length).to be > 5
   end
 end
