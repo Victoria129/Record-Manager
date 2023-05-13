@@ -70,7 +70,12 @@ class Creations
     print 'Game Source: '
     source = gets.chomp
     print 'Is the Game Multiplayer: '
-    mp = gets.chomp
+    mp = gets.chomp.upcase
+    if mp == 'Y'
+      mp = true
+    else
+      mp = false
+    end
     print 'Last played date(YYYY-MM-DD): '
     lp_date = gets.chomp
     print 'Publish date(YYYY-MM-DD): '
@@ -88,6 +93,7 @@ class Creations
   end
   
   def create_genre
+    puts #blank
     puts 'Please create a Genre with the details below: '
     print 'Genre name: '
     genre_name = gets.chomp
@@ -96,6 +102,7 @@ class Creations
   end
 
   def create_author
+    puts #blank
     puts 'Please create an Author with the details below: '
     print 'Author\'s first name: '
     f_name = gets.chomp
@@ -106,13 +113,15 @@ class Creations
   end
   
   def create_label
+    puts #blank
     puts 'Please create an Author with the details below: '
     print 'Label title: '
     l_title = gets.chomp
     print 'Label colour: '
     l_colour = gets.chomp
     @created_label = Label.new(l_title, l_colour)
-    puts 'Label added successfully!'   
+    puts 'Label added successfully!' 
+    puts #blank  
   end
 
 end

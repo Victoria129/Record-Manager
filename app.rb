@@ -1,5 +1,9 @@
 require './listings'
 require './creations'
+require './saves'
+require './loads'
+require 'json'
+
 
 # Class to handle UI and it's methods
 class App
@@ -8,15 +12,23 @@ class App
     @creations = Creations.new
   end
 
+  def loading
+    loads = Loads.new
+    loads.load_book
+    loads.load_album
+    loads.load_game
+  end
+
   def start
+    loading
     puts 'Welcome to Our Catalogue'
-    puts # blank
     @menu_choice = ''
     menu until @menu_choice.upcase == 'X'
   end
 
   def menu
     sleep(1)
+    puts #blank
     puts 'Please input a number or [X] to exit'
     puts '[1] List all Books', '[2] List all Music Albums', '[3] List all Games',
     '[4] List all Genres', '[5] List all Labels', '[6] List all Authors',
@@ -25,14 +37,18 @@ class App
     @menu_choice = gets.chomp
     puts # blank
     if @menu_choice.upcase == 'X'
-      puts 'Goodbye'
-      puts # blank
+        saves = Saves.new
+        saves.book_saves
+        saves.album_saves
+        saves.game_saves
+        puts 'Goodbye!'
+        puts # blank
     elsif @menu_choice.to_i != 0 && @menu_choice.to_i.between?(1, 9)
       puts "OPTION CHOSEN [#{@menu_choice}]"
       puts # blank
       enter_menu
     else
-      puts 'Please ENter a valid choice from the Menu'
+      puts 'Please Enter a valid choice from the Menu'
       puts # blank
     end
   end
