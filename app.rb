@@ -4,8 +4,6 @@ require './saves'
 require './loads'
 require 'json'
 
-# rubocop:disable Metrics/AbcSize
-# rubocop:disable Metrics/MethodLength
 # Class to handle UI and it's methods
 class App
   def loading
@@ -53,9 +51,17 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def enter_menu
     puts # blank
+    case @menu_choice
+    when '1', '2', '3', '4', '5', '6'
+      list_choices
+    when '7', '8', '9'
+      add_choices
+    end
+  end
+
+  def list_choices
     case @menu_choice
     when '1' then puts list_all_books
     when '2' then puts list_all_albums
@@ -63,12 +69,14 @@ class App
     when '4' then puts list_all_genres
     when '5' then puts list_all_labels
     when '6' then puts list_all_authors
+    end
+  end
+
+  def add_choices
+    case @menu_choice
     when '7' then puts add_a_book
     when '8' then puts add_an_album
     when '9' then puts add_a_game
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 end
-# rubocop:enable Metrics/AbcSize
-# rubocop:enable Metrics/MethodLength
