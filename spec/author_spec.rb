@@ -1,6 +1,7 @@
 require './author'
 require './book'
 require './label'
+require './genre'
 
 RSpec.describe Author do
   it 'tests the Author class instance' do
@@ -11,10 +12,12 @@ RSpec.describe Author do
   end
 
   it 'should add item using the add_item method' do
-    author1 = Author.new('Mike', 'Jones')
-    author2 = Author.new('Dave', 'Smith')
-    label = Label.new('Classic', 'grey')
-    book = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: 'Vintage', author: author1,
+    genre = Genre.new(name: 'Vintage')
+    label = Label.new('Classic', 'Red')
+    author = Author.new('Mike', 'Smith')
+    author2 = Author.new('John', 'Doe')
+
+    book = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: genre, author: author,
                     source: 'Bookstore', label: label, publish_date: '1982-03-11')
 
     author2.add_items(book)

@@ -18,4 +18,8 @@ class MusicAlbum < Item
   def self.all
     @music_albums
   end
+
+  def self.all=(albums)
+    @music_albums = albums
+  end
 end

@@ -1,5 +1,7 @@
 require './label'
-require './item'
+require './book'
+require './genre'
+require './author'
 
 RSpec.describe Label do
   it 'tests the Label class instance' do
@@ -12,8 +14,10 @@ RSpec.describe Label do
   it 'should add item to the items array using add_items method' do
     label1 = Label.new('Classic', 'grey')
     label2 = Label.new('Bestseller', 'red')
+    author = Author.new('Mike', 'Smith')
+    genre = Genre.new(name: 'Vintage')
 
-    book1 = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: 'Vintage', author: 'Agatha Christie',
+    book1 = Book.new(publisher: 'Amazon', cover_state: 'Good', genre: genre, author: author,
                      source: 'Bookstore', label: label1, publish_date: '1982-03-11')
 
     label2.add_items(book1)

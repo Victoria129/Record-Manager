@@ -20,4 +20,8 @@ class Game < Item
   def self.all
     @games
   end
+
+  def self.all=(games)
+    @games = games
+  end
 end

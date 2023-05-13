@@ -19,4 +19,8 @@ class Book < Item
   def self.all
     @books
   end
+
+  def self.all=(books)
+    @books = books
+  end
 end

@@ -1,12 +1,23 @@
 require './music_album'
 require './genre'
+require './label'
+require './author'
 
 RSpec.describe MusicAlbum do
   before(:each) do
-    @album1 = MusicAlbum.new(on_spotify: true, genre: 'Vintage', author: 'Agatha Christie',
-                             source: 'albumstore', label: 'Classic', publish_date: '1982-03-11')
-    @album2 = MusicAlbum.new(on_spotify: true, genre: 'Country', author: 'Jane Austen',
-                             source: 'Library', label: 'My country', publish_date: '2000-01-28')
+    label1 = Label.new('Classic', 'grey')
+    label2 = Label.new('Hot', 'red')
+    genre = Genre.new(name: 'Country')
+    genre2 = Genre.new(name: 'Vintage')
+    author = Author.new('Mike', 'Smith')
+    author2 = Author.new('Jim', 'Ike')
+
+    @album1 = MusicAlbum.new(on_spotify: true, genre: genre, author: author, source: 'Bookstore',
+                             label: label1, publish_date: '1982-03-11')
+    @album2 = MusicAlbum.new(
+      on_spotify: false, genre: genre2, author: author2,
+      source: 'Radio', label: label2, publish_date: '1999-05-12'
+    )
   end
 
   it 'should create an instance of the MusicAlbum class' do
@@ -16,6 +27,24 @@ RSpec.describe MusicAlbum do
 
   it 'lists all music albums' do
     expect(MusicAlbum.all.length).to eq(4)
+  end
+end
+
+RSpec.describe MusicAlbum do
+  before(:each) do
+    label1 = Label.new('Classic', 'grey')
+    label2 = Label.new('Hot', 'red')
+    genre = Genre.new(name: 'Country')
+    genre2 = Genre.new(name: 'Vintage')
+    author = Author.new('Mike', 'Smith')
+    author2 = Author.new('Jim', 'Ike')
+
+    @album1 = MusicAlbum.new(on_spotify: true, genre: genre, author: author, source: 'Bookstore',
+                             label: label1, publish_date: '1982-03-11')
+    @album2 = MusicAlbum.new(
+      on_spotify: false, genre: genre2, author: author2,
+      source: 'Radio', label: label2, publish_date: '1999-05-12'
+    )
   end
 
   it 'checks if album can be archived' do

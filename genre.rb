@@ -2,7 +2,8 @@ require './item'
 
 # Genre class to define Item genre objects
 class Genre
-  attr_accessor :name
+  attr_accessor :name, :items
+  attr_reader :id
 
   @genres = []
 
