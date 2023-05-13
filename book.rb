@@ -13,7 +13,7 @@ class Book < Item
   end
 
   def can_be_archived?
-    Date.today.year - @publish_date.year > 10 || @cover_state == 'Bad'
+    super || @cover_state == 'Bad'
   end
 
   def self.all
