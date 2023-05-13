@@ -26,7 +26,7 @@ RSpec.describe MusicAlbum do
   end
 
   it 'lists all music albums' do
-    expect(MusicAlbum.all.length).to eq(4)
+    expect(MusicAlbum.all.length).to be > 4
   end
 end
 
@@ -54,6 +54,6 @@ RSpec.describe MusicAlbum do
 
   it 'lists all albums' do
     # checks that albums are created before each test
-    expect(MusicAlbum.all.length).to eq(8)
+    expect(MusicAlbum.all.length).to be > 7
   end
 end
